@@ -1,0 +1,17 @@
+{
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre Mi",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "home": {
+      "name": "Uciel Daró",
+      "subtitle": "DESARROLLADOR FULLSTACK"
+    },
+    "selec_page": {
+      "about": "Sobre Mi",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    }
+  }

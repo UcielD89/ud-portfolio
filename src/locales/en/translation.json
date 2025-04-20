@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "name": "Uciel Daró",
+    "subtitle": "FULLSTACK DEVELOPER"
+  },
+  "selec_page": {
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}
