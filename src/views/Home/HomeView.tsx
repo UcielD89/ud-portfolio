@@ -15,6 +15,12 @@ function HomeView({containerRef} : HomeViewProp) {
         <h4>FULLSTACK DEVELOR</h4>
       </div>
       <NavigateForView to="/select-page" select_text={1} />
+      <div className="bg-decor" aria-hidden="true">
+        <div className="bg-shape"></div>
+      </div>
+      <div className="bg-decor-2" aria-hidden="true">
+        <div className="bg-shape-2"></div>
+      </div>
     </section>
   );
 }

@@ -29,7 +29,7 @@ a:hover {
 }
 
 body {
-  background: linear-gradient(90deg, rgba(22,22,22,1) 0%, rgba(121,122,124,1) 100%);
+  background: rgba(22,22,22,1);
   margin: 0;
   display: flex;
   place-items: center;
@@ -42,8 +42,7 @@ main {
   height: 100vh;
 }
 
-ul, li, a {
+ul, li, a, p, h1, h2, h3, h4, h5{
   padding: 0;
   margin: 0;
-
 }

@@ -1,4 +1,171 @@
 .about-us {
-    height: 100vh;
-    background-color: var(--color-background);
+  background-color: var(--color-background);
+  padding: 1rem;
+
+  .about-us-info {
+    position: relative;
+    .about-us-title {
+      font-size: 7rem;
+      padding-top: 4rem;
+    }
+
+    .about-us-profile-img {
+      position: absolute;
+      top: 11.2rem;
+      left: 14rem;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 5rem;
+        left: 2rem;
+        top: 0.5rem;
+        height: 5rem;
+        border-radius: 4rem;
+        background-color: #464646;
+        z-index: -1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 4rem;
+        height: 4rem;
+        top: 1rem;
+        left: 4rem;
+        border-radius: 20rem;
+        background-color: #2c2c2c;
+        z-index: -2;
+      }
+    }
+
+    .about-us-slogan {
+      font-weight: bold;
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+      line-height: 1.2rem;
+      font-family: "Roboto", sans-serif;
+    }
+    p {
+      line-height: 1.2rem;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+  .about-us-hard-skills {
+    padding-top: 2rem;
+    h2 {
+      font-size: 3rem;
+    }
+    .about-us-hard-skills-types {
+      padding-top: 1rem;
+    }
+    .about-us-hard-skills-items {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      .about-us-hard-skills-card {
+        font-family: "Roboto", sans-serif;
+        width: 4.2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        background: #38383880;
+        border-radius: 0.5rem;
+        text-align: center;
+        border: 2px solid #494949;
+        .about-us-hard-skills-card-title {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .about-us-soft-skills {
+    h2 {
+      font-size: 3rem;
+    }
+    .about-us-soft-skills-items {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      .about-us-soft-skills-card {
+        background: #38383880;
+        border-radius: 1.2rem;
+        padding: 1rem;
+        position: relative;
+        .about-us-soft-skills-card-title {
+          font-size: 2rem;
+          padding-top: 4.5rem;
+          padding-bottom: 0.3rem;
+        }
+        .about-us-soft-skills-card-content {
+          line-height: 1.2rem;
+          font-family: "Roboto", sans-serif;
+        }
+        .about-us-soft-skills-card-icon {
+          position: absolute;
+          font-size: 2rem;
+          width: 3rem;
+          height: 3rem;
+          padding: 0.5rem;
+          margin-left: 0.1rem;
+          background-color: #242424;
+          border: 2px solid #494949;
+          border-radius: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .about-us-studies {
+    h2 {
+      font-size: 3rem;
+    }
+    .about-us-studies-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      line-height: 1.2rem;
+      .about-us-studies-card {
+        background-color: #2c2c2c;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+        .about-us-studies-card-title {
+          font-size: 1.5rem;
+          padding-bottom: 0.5rem;
+          line-height: 1.5rem;
+        }
+        .about-us-studies-card-content {
+          font-family: "Roboto", sans-serif;
+        }
+        .about-us-studies-card-abilities {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.2rem;
+          margin-top: 1rem;
+          font-family: "Roboto", sans-serif;
+
+          .about-us-studies-card-ability {
+            border: 1.4px solid #494949;
+            padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+            border-radius: 1rem;
+          }
+        }
+      }
+    }
+  }
 }
