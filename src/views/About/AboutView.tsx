@@ -1,41 +1,9 @@
 import "./AboutViewStyles.css";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import { ReactRef } from "@gsap/react";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-
-// Image
-import perfil from "../../assets/img/perfil.webp";
-
-// Logos - Languages
-import html from "../../assets/svg/language/html-logo.svg";
-import css from "../../assets/svg/language/css-logo.svg";
-import js from "../../assets/svg/language/js-logo.svg";
-import php from "../../assets/svg/language/php-logo.svg";
-import typescript from "../../assets/svg/language/typescript-logo.svg";
-
-// Logos - Technologies
-import react from "../../assets/svg/technologies/react-logo.svg";
-import react_native from "../../assets/svg/technologies/react-native-logo.svg";
-import tailwindcss from "../../assets/svg/technologies/tailwindcss-logo.svg";
-import boostrap from "../../assets/svg/technologies/bootstrap-logo.svg";
-import material_ui from "../../assets/svg/technologies/material-ui-logo.svg";
-
-import nodejs from "../../assets/svg/technologies/node-logo.svg";
-import express from "../../assets/svg/technologies/express-logo.svg";
-import firebase from "../../assets/svg/technologies/firebase-logo.svg";
-import mysql from "../../assets/svg/technologies/mysql-logo.svg";
-import prisma from "../../assets/svg/technologies/prisma-orm-logo.svg";
-
-// Logos - Tools
-import figma from "../../assets/svg/tools/figma-logo.svg";
-import canva from "../../assets/svg/tools/canva-logo.svg";
-import bitbucket from "../../assets/svg/tools/bitbucket-logo.svg";
-import chatgpt from "../../assets/svg/tools/chatgpt-logo.svg";
-import github from "../../assets/svg/tools/github-logo.svg";
-import google_docs from "../../assets/svg/tools/google-docs-logo.svg";
-import google_drive from "../../assets/svg/tools/google-drive-logo.svg";
-import notion from "../../assets/svg/tools/notion-logo.svg";
-import trello from "../../assets/svg/tools/trello-logo.svg";
 
 const hard_skills = [
   {
@@ -43,23 +11,23 @@ const hard_skills = [
     items: [
       {
         name: "HTML",
-        image: html,
+        image: "/svg/language/html-logo.svg",
       },
       {
         name: "CSS",
-        image: css,
+        image: "/svg/language/css-logo.svg",
       },
       {
         name: "JAVASCRIP",
-        image: js,
+        image: "/svg/language/js-logo.svg",
       },
       {
         name: "PHP",
-        image: php,
+        image: "/svg/language/php-logo.svg",
       },
       {
         name: "TYPESCRIPT",
-        image: typescript,
+        image: "/svg/language/ts-logo.svg",
       },
     ],
   },
@@ -68,23 +36,23 @@ const hard_skills = [
     items: [
       {
         name: "REACT",
-        image: react,
+        image: "/svg/technologies/react-logo.svg",
       },
       {
         name: "REACT NATIVE",
-        image: react_native,
+        image: "/svg/technologies/react-native-logo.svg",
       },
       {
         name: "TAILWIND CSS",
-        image: tailwindcss,
+        image: "/svg/technologies/tailwindcss-logo.svg",
       },
       {
         name: "BOOSTRAP",
-        image: boostrap,
+        image: "/svg/technologies/bootstrap-logo.svg",
       },
       {
         name: "MATERIAL UI",
-        image: material_ui,
+        image: "/svg/technologies/material-ui-logo.svg",
       },
     ],
   },
@@ -93,23 +61,23 @@ const hard_skills = [
     items: [
       {
         name: "NODE JS",
-        image: nodejs,
+        image: "/svg/technologies/node-logo.svg",
       },
       {
         name: "EXPRESS",
-        image: express,
+        image: "/svg/technologies/express-logo.svg",
       },
       {
         name: "FIREBASE",
-        image: firebase,
+        image: "/svg/technologies/firebase-logo.svg",
       },
       {
         name: "MYSQL",
-        image: mysql,
+        image: "/svg/technologies/mysql-logo.svg",
       },
       {
         name: "PRISMA ORM",
-        image: prisma,
+        image: "/svg/technologies/prisma-orm-logo.svg",
       },
     ],
   },
@@ -118,39 +86,39 @@ const hard_skills = [
     items: [
       {
         name: "FIGMA",
-        image: figma,
+        image: "/svg/tools/figma-logo.svg",
       },
       {
         name: "CANVA",
-        image: canva,
+        image: "/svg/tools/canva-logo.svg",
       },
       {
         name: "GITHUB",
-        image: github,
+        image: "/svg/tools/github-logo.svg",
       },
       {
         name: "BITBUCKET",
-        image: bitbucket,
+        image: "/svg/tools/bitbucket-logo.svg",
       },
       {
         name: "TRELLO",
-        image: trello,
+        image: "/svg/tools/trello-logo.svg",
       },
       {
         name: "NOTION",
-        image: notion,
+        image: "/svg/tools/notion-logo.svg",
       },
       {
         name: "GOOGLE DOCS",
-        image: google_docs,
+        image: "/svg/tools/google-docs-logo.svg",
       },
       {
         name: "GOOGLE DIRVE",
-        image: google_drive,
+        image: "/svg/tools/google-drive-logo.svg",
       },
       {
         name: "CHAT GPT",
-        image: chatgpt,
+        image: "/svg/tools/chatgpt-logo.svg",
       },
     ],
   },
@@ -292,6 +260,165 @@ const studies = [
   },
 ];
 
+const certificates = [
+  {
+    title: "Curso de Diseño Gráfico Digital - Nivel Inicial",
+    date: "Junio 2024",
+    institute: "Centro de e-Learning UTN FRBA",
+    habilitates: [
+      {
+        name: "Diseño Grafico",
+      },
+      {
+        name: "Diseño de Logotipos",
+      },
+    ],
+  },
+  {
+    title: "Introducción al Desarrollo Web 1",
+    date: "Junio 2023",
+    institute: "Google Activate",
+    habilitates: [
+      {
+        name: "Historia de la Web",
+      },
+      {
+        name: "HTML",
+      },
+      {
+        name: "CSS",
+      },
+    ],
+  },
+  {
+    title: "Introducción a Python y Programación Orientada a Objetos (POO)",
+    date: "Mayo 2023",
+    institute: "Instituto Zona Oeste",
+    habilitates: [
+      {
+        name: "Python",
+      },
+      {
+        name: "CRUD",
+      },
+      {
+        name: "Pogramación Orientada a Objetos",
+      },
+    ],
+  },
+  {
+    title: "Programación Aplicada",
+    date: "Octubre 2022",
+    institute: "Trabajadores Informáticos",
+    habilitates: [
+      {
+        name: "Desarrollo de Software",
+      },
+      {
+        name: "Metodologías",
+      },
+      {
+        name: "Patrones de diseño",
+      },
+      {
+        name: "Arquitecturas de Software",
+      },
+    ],
+  },
+  {
+    title: "Programador Python",
+    date: "Octubre 2022",
+    institute: "Edutin Academy",
+    habilitates: [
+      {
+        name: "Fundamentos de la programación",
+      },
+      {
+        name: "Python",
+      },
+      {
+        name: "Algoritmos",
+      },
+      {
+        name: "Logíca",
+      },
+    ],
+  },
+  {
+    title: "Introducción a la Programación",
+    date: "Abril 2022",
+    institute: "EducacionIT",
+    habilitates: [
+      {
+        name: "Fundamentos de la programación",
+      },
+    ],
+  },
+  {
+    title: "Argentina Programa - #SéProgrmar",
+    date: "Diciembre 2021",
+    institute: "Mumuki",
+    habilitates: [
+      {
+        name: "Algoritmos",
+      },
+      {
+        name: "Logíca",
+      },
+      {
+        name: "Introducción en JavaScript",
+      },
+      {
+        name: "Introducción en Ruby",
+      },
+    ],
+  },
+  {
+    title: "Introducción a la programación en Android Kotlin",
+    date: "Octubre 2021",
+    institute: "Centro de e-Learning UTN FRBA",
+    habilitates: [
+      {
+        name: "Plataforma Android",
+      },
+      {
+        name: "Introducción a Kotlin",
+      },
+      {
+        name: "XML",
+      },
+      {
+        name: "Patron MVVM",
+      },
+      {
+        name: "Base de Datos",
+      },
+      {
+        name: "Retrofit",
+      },
+      {
+        name: "Room Data Base",
+      },
+    ],
+  },
+  {
+    title: "Diplomado en Kotlin",
+    date: "Julio 2021",
+    institute: "Edutin Academy",
+    habilitates: [
+      {
+        name: "Plataforma Android",
+      },
+      {
+        name: "Introducción a Kotlin",
+      },
+      {
+        name: "Fundamentos de la programación",
+      },
+    ],
+  },
+];
+
 interface AboutViewProps {
   containerRef: ReactRef | null;
 }
@@ -299,10 +426,15 @@ interface AboutViewProps {
 function AboutView({ containerRef }: AboutViewProps) {
   return (
     <section className="about-us" ref={containerRef}>
-      <div className="about-us-info">
+      <article className="about-us-info">
         <h1 className="about-us-title">SOBRE MI.</h1>
         <div className="about-us-profile-img">
-          <img src={perfil} alt="Imagen de Perfil" width={100} height={100} />
+          <img
+            src="/img/perfil.webp"
+            alt="Imagen de Perfil"
+            width={100}
+            height={100}
+          />
         </div>
         <div className="about-us-description">
           <p className="about-us-slogan">
@@ -319,9 +451,9 @@ function AboutView({ containerRef }: AboutViewProps) {
             servidor (APIs).
           </p>
         </div>
-      </div>
+      </article>
       <article className="about-us-hard-skills">
-        <h2>HABILIDADES FUERTES</h2>
+        <h2>HABILIDADES FUERTES.</h2>
         {hard_skills.map((i, index) => (
           <div className="about-us-hard-skills-types" key={index}>
             <h3 className="about-us-hard-skills-title">{i.title}</h3>
@@ -343,7 +475,7 @@ function AboutView({ containerRef }: AboutViewProps) {
         ))}
       </article>
       <article className="about-us-soft-skills">
-        <h2>HABILIDADES BLANDAS</h2>
+        <h2>HABILIDADES BLANDAS.</h2>
         <ul className="about-us-soft-skills-items">
           {soft_skills.map((i, index) => (
             <li className="about-us-soft-skills-card" key={index}>
@@ -357,7 +489,7 @@ function AboutView({ containerRef }: AboutViewProps) {
         </ul>
       </article>
       <article className="about-us-studies">
-        <h2>ESTUDIOS</h2>
+        <h2>EDUCACIÓN.</h2>
         <ul className="about-us-studies-items">
           {studies.map((i, index) => (
             <li className="about-us-studies-card" key={index}>
@@ -368,6 +500,40 @@ function AboutView({ containerRef }: AboutViewProps) {
               <div className="about-us-studies-card-abilities">
                 {i.habilitates.map((i, index) => (
                   <span key={index} className="about-us-studies-card-ability">
+                    {i.name}
+                  </span>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </article>
+      <article className="about-us-certificates">
+        <h2>LICIENCIAS Y CERTIFICADOS.</h2>
+        <ul className="about-us-certificates-items">
+          {certificates.map((i, index) => (
+            <li key={index} className="about-us-certificates-card">
+              <div className="about-us-certificates-img">
+                <ImageGallery
+                  showFullscreenButton={true}
+                  showPlayButton={false}
+                  items={[
+                    {
+                      original: "https://picsum.photos/id/1018/1000/600/",
+                    },
+                  ]}
+                />
+              </div>
+              <h3 className="about-us-certificates-card-title">{i.title}</h3>
+              <p className="about-us-certificates-card-content">
+                {i.date} / {i.institute}
+              </p>
+              <div className="about-us-certificates-card-abilities">
+                {i.habilitates.map((i, index) => (
+                  <span
+                    key={index}
+                    className="about-us-certificates-card-ability"
+                  >
                     {i.name}
                   </span>
                 ))}

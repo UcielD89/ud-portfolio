@@ -8,7 +8,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 
-import logo_ud from "../../assets/svg/logo_ud.svg";
 import { GrGithub } from "react-icons/gr";
 import { BsBehance, BsLinkedin } from "react-icons/bs";
 import SelectLanguage from "../SelectLanguage/SelectLanguage";
@@ -57,7 +56,7 @@ function NavbarComponent() {
   return (
     <header className="navbar-header" ref={container}>
       <div className="navbar-logo">
-        <img src={logo_ud} alt="Logo Uciel Daró" width={120} height={120} />
+        <img src="svg/logo-ud.svg" alt="Logo Uciel Daró" width={120} height={120} />
       </div>
       <div className="navbar-open-buttom">
         <SelectLanguage />

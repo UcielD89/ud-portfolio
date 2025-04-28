@@ -3,9 +3,6 @@ import "./SelectLanguage.css";
 import { HiOutlineLanguage } from "react-icons/hi2";
 import { useEffect, useRef, useState } from "react";
 
-import flag_ar from '../../assets/svg/flag_ar.svg';
-import flag_eu from '../../assets/svg/flag_eu.svg';
-
 function SelectLanguage() {
   // State
   const [open, setOpen] = useState(false);
@@ -49,10 +46,10 @@ function SelectLanguage() {
       {open && (
         <div className="dropdown">
           <div onClick={() => handleLanguageChange("es")} style={{cursor: "pointer"}}>
-            <img src={flag_ar} width={30} height={30} alt="Español" className="flag"/>
+            <img src="/svg/flag-ar.svg" width={30} height={30} alt="Español" className="flag"/>
           </div>
           <div onClick={() => handleLanguageChange("en")} style={{cursor: "pointer"}}>
-            <img src={flag_eu} width={30} height={30} alt="English" className="flag" />
+            <img src="/svg/flag-eu.svg" width={30} height={30} alt="English" className="flag" />
           </div>
         </div>
       )}
