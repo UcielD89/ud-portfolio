@@ -14,6 +14,7 @@ import SelectLanguage from "../SelectLanguage/SelectLanguage";
 
 function NavbarComponent() {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
+  const [scrolling, setScrolling] = useState(false);
 
   const container = useRef<HTMLDivElement | null>(null);
 
@@ -53,8 +54,23 @@ function NavbarComponent() {
     }
   }, [showNavbar]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="navbar-header" ref={container}>
+    <header className={`navbar-header ${scrolling ? "navbar-scrolling" : ""}`} ref={container}>
       <div className="navbar-logo">
         <img src="svg/logo-ud.svg" alt="Logo Uciel Daró" width={120} height={120} />
       </div>

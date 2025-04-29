@@ -427,14 +427,15 @@ function AboutView({ containerRef }: AboutViewProps) {
   return (
     <section className="about-us" ref={containerRef}>
       <article className="about-us-info">
-        <h1 className="about-us-title">SOBRE MI.</h1>
+        <h1 className="about-us-title">SOBRE MI</h1>
         <div className="about-us-profile-img">
           <img
             src="/img/perfil.webp"
             alt="Imagen de Perfil"
-            width={100}
-            height={100}
+            width={150}
+            height={150}
           />
+          <div></div>
         </div>
         <div className="about-us-description">
           <p className="about-us-slogan">

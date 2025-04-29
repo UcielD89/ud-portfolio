@@ -1,7 +1,7 @@
 .navbar-header {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   position: fixed;
@@ -9,9 +9,11 @@
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 
   .navbar-open-buttom {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .navbar-logo {
@@ -22,10 +24,17 @@
     .navbar-logo{
       img {
         width: 5rem;
-        height: 5rem;
+        height: 3rem;
       }
     }
   }
+}
+
+.navbar-scrolling {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar-nav {
