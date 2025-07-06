@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import "./HomeViewStyles.css";
 
-import arrow_1 from "../../assets/svg/arrow_1.svg";
 import NavigateForView from "../../components/NavigateForView/NavigateForView";
 
 function HomeView() {

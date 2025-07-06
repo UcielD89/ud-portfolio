@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   z-index: 10;
+  transition: backdrop-filter 0.5s ease;
 
   .navbar-open-buttom {
     padding: 1rem;
@@ -18,7 +19,7 @@
     margin-left: 1em;
   }
 
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 1280px) {
     .navbar-logo{
       img {
         width: 5rem;
@@ -28,6 +29,22 @@
   }
 }
 
+.navbar-header.navbar-header-scrolled {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(75, 75, 75, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar-header.navbar-header-scrolled {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background: rgba(75, 75, 75, 0);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+  }
+}
 .navbar-nav {
   width: 100%;
   height: 100vh;
@@ -36,7 +53,6 @@
   left: 0;
   right: 0;
   z-index: 10;
-  overflow: scroll;
 
   display: flex;
   flex-direction: column;
@@ -77,6 +93,10 @@
         transition: 0.2s all ease-in;
       }
     }
+  }
+
+  .navbar-copyright {
+    margin-bottom: 2rem;
   }
 
   .navbar-social-network {

@@ -1,0 +1,85 @@
+.projects-container {
+  overflow: auto;
+  background-color: var(--color-background);
+  height: 100vh;
+  
+  h1 {
+    text-align: center;
+    padding: 6rem 0rem 3rem 1rem;
+    font-size: 2.5rem;
+  }
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
+    img {
+      object-fit: contain;
+    }
+    .projects-list-item {
+      height: 15rem;
+      display: flex;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 1rem;
+      background-color: #333333;
+      padding: 1rem;
+      transition: .2s all ease-in-out;
+      &:hover {
+        background-color: #5a5a5a;
+      }
+      .projects-item-description {
+        width: 100%;
+        h2 {
+          color: var(--color-white);
+          padding-bottom: 0.5rem;
+        }
+        .projects-item-details {
+          
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          font-family: "Inter", sans-serif;
+          h3 {
+            color: var(--color-white);
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+          h4 {
+            color: var(--color-white);
+            background-color: #5a5a5a;
+            border-radius: 1rem;
+            font-weight: 400;
+            padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 7rem;
+    }
+    .projects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 980px) {
+    .projects-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(auto-fill, minmax(15rem, 1fr));
+      max-width: 78rem;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+}

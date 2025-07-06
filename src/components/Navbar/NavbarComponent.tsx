@@ -13,6 +13,7 @@ import { BsBehance, BsLinkedin } from "react-icons/bs";
 
 function NavbarComponent() {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const container = useRef<HTMLDivElement | null>(null);
 
@@ -52,8 +53,21 @@ function NavbarComponent() {
     }
   }, [showNavbar]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="navbar-header" ref={container}>
+    <header className={`navbar-header ${scrolled ? "navbar-header-scrolled" : ""}`} ref={container}>
       <div className="navbar-logo">
         <img src={logo_ud} alt="Logo Uciel Daró" width={100} height={100} />
       </div>

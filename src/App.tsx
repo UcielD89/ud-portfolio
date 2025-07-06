@@ -9,69 +9,121 @@ import ContactView from "./views/Contact/ContactView";
 import SelectPageView from "./views/SelectPage/SelectPageView";
 import { ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
+import ProjectView from "./views/Projects/views/Project/ProjectView";
 
 interface PageTransitionProps {
   children: ReactNode;
+  transition: number;
 }
 
-const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
+function PageTransition({ children, transition }: PageTransitionProps) {
   const containerRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
     const el = containerRef.current;
-    if (el) {
-      // Desactivar scroll temporalmente
-      document.body.style.overflow = "hidden";
+    switch (transition) {
+      case 1:
+        if (el) {
+          // Desactivar scroll temporalmente
+          document.body.style.overflow = "hidden";
 
-      gsap.fromTo(
-        el,
-        { x: "100%", opacity: 0 },
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 0.8,
-          ease: "power4.out",
-          onComplete: () => {
-            document.body.style.overflow = "auto";
-          },
+          gsap.fromTo(
+            el,
+            { x: "100%", opacity: 0 },
+            {
+              x: "0%",
+              opacity: 1,
+              duration: 0.8,
+              ease: "power4.out",
+              onComplete: () => {
+                document.body.style.overflow = "auto";
+              },
+            }
+          );
         }
-      );
+        break;
+      case 2:
+        if (el) {
+          // Desactivar scroll temporalmente
+          document.body.style.overflow = "hidden";
+
+          gsap.fromTo(
+            el,
+            { y: "100%", opacity: 0 },
+            {
+              y: "0%",
+              opacity: 1,
+              duration: 0.8,
+              ease: "power4.out",
+              onComplete: () => {
+                document.body.style.overflow = "auto";
+              },
+            }
+          );
+        }
+        break;
     }
   }, [location]);
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        position: "absolute",
-        width: "100%",
-        minHeight: "100%", 
-        top: 0,
-        left: 0,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+  return <main ref={containerRef}>{children}</main>;
+}
 
 function App() {
   return (
-    <main>
-      <BrowserRouter>
-        <NavbarComponent />
-        <PageTransition>
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/select-page" element={<SelectPageView />} />
-            <Route path="/about-us" element={<AboutView />} />
-            <Route path="/projects" element={<ProjectsView />} />
-            <Route path="/contact" element={<ContactView />} />
-          </Routes>
-        </PageTransition>
-      </BrowserRouter>
-    </main>
+    <BrowserRouter>
+      <NavbarComponent />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PageTransition transition={1}>
+              <HomeView />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/select-page"
+          element={
+            <PageTransition transition={1}>
+              <SelectPageView />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/about-us"
+          element={
+            <PageTransition transition={2}>
+              <AboutView />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <PageTransition transition={2}>
+              <ProjectsView />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <PageTransition transition={2}>
+              <ContactView />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/projects/:name"
+          element={
+            <PageTransition transition={2}>
+              <ProjectView />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
