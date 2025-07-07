@@ -65,10 +65,10 @@
         padding: 0.5rem;
         font-size: 1.5rem;
         font-weight: 600;
+        transition: 0.2s all ease-in-out;
         &:hover {
           color: #f2f2f2;
-          background-color: #6d909b;
-          transition: 0.2s all ease-in-out;
+          background-color: #636363;
         }
         svg {
           background: #111;
@@ -83,12 +83,6 @@
   }
   @media screen and (min-width: 992px) {
     .project-content {
-      h1 {
-        font-size: 2.5rem;
-      }
-      h1 > span {
-        font-size: 4.5rem;
-      }
       padding-top: 102px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -97,8 +91,14 @@
       margin: auto;
       position: relative;
       h1 {
+        font-size: 2.5rem;
+      }
+      h1 > span {
+        font-size: 4.5rem;
+      }
+      h1 {
         position: sticky;
-        top: 0rem;
+        top: 108px;
         grid-column: 1;
         grid-row: 1;
       }
@@ -107,7 +107,7 @@
         grid-column: 1;
         grid-row: 1;
         position: sticky;
-        top: 10rem;
+        top: 18rem;
       }
       .project-image {
         height: 100%;
