@@ -11,8 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm run build
+
+      - uses: pnpm/action-setup@v2  # Instala pnpm (opcional si no está en la imagen)
+        with:
+          version: 8  # o la versión que uses
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+      - run: pnpm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
+
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UCIEL_DARO_PORTFOLIO }}
