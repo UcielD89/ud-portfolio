@@ -10,17 +10,25 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2  # Instala pnpm (opcional si no está en la imagen)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          version: 8  # o la versión que uses
+          node-version: 20  # Usá la versión que usa tu proyecto
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8  # O la versión que uses en tu proyecto
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build project
-      - run: pnpm run build
+        run: pnpm run build
+        
       - uses: FirebaseExtended/action-hosting-deploy@v0
 
         with:
