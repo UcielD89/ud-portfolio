@@ -115,7 +115,7 @@ function App() {
           }
         />
         <Route
-          path="/projects/:name"
+          path="/projects/:slug"
           element={
             <PageTransition transition={2}>
               <ProjectView />
