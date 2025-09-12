@@ -1,40 +1,26 @@
 import { Link } from "react-router-dom";
 import "./SelectPageStyles.css";
-import NavigateForView from "../../components/NavigateForView/NavigateForView";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-import gsap from "gsap";
+import { MdArrowOutward, MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 function SelectPageView() {
-  const container = useRef<HTMLDivElement | null>(null);
-  
-  useGSAP(
-    () => {
-      gsap.from(".select-page-item", {
-        y: 75,
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        stagger: 0.3,
-      });
-    },
-    { scope: container }
-  );
   return (
-    <section className="select-page-container" ref={container}>
-      <div className="select-page-item">
-        <Link to="/about-us">SOBRE MI</Link>
+    <section className="select-page-container">
+      <div className="select-return-page">
+        <MdOutlineKeyboardArrowLeft />
+        <span>VOLVER</span>
       </div>
-      <div className="select-page-item">
-        <Link to="/projects">PROYECTOS</Link>
-      </div>
-      <div className="select-page-item">
-        <Link to="/contact">CONTACTO</Link>
-      </div>
-      <div className="select-page-footer">
-        <NavigateForView to="/" select_text={2} orientation={2}/>
-        <p>UCIEL DARÓ</p>
-      </div>
+      <article className="select-page-list">
+        <Link className="select-page-item" to="/about-us">
+          SOBRE MI <MdArrowOutward size={40} />
+        </Link>
+        <Link className="select-page-item" to="/projects">
+          PROYECTOS <MdArrowOutward size={40} />
+        </Link>
+        <Link className="select-page-item" to="/contact">
+          CONTACTO <MdArrowOutward size={40} />
+        </Link>
+      </article>
+      <span>UCIEL DARÓ</span>
     </section>
   );
 }

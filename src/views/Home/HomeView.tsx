@@ -1,16 +1,51 @@
+import { useEffect, useRef, useState } from "react";
 import "./HomeViewStyles.css";
+import { motion, easeInOut } from "motion/react";
 
-import NavigateForView from "../../components/NavigateForView/NavigateForView";
+const slideVariants = {
+  initial: { x: "100%", opacity: 0 },
+  animate: { x: "0%", opacity: 1 },
+  exit: { x: "-100%", opacity: 0 }
+};
+
+const fadeVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 }
+};
+
+
+const transition = { duration: 0.6, ease: easeInOut };
 
 function HomeView() {
+  const isFirstLoad = useRef(true);
+  const [variants, setVariants] = useState(fadeVariants);
+
+  useEffect(() => {
+    if (isFirstLoad.current) {
+      // en el primer render usamos solo fade
+      setVariants(fadeVariants);
+      isFirstLoad.current = false;
+    } else {
+      // en las transiciones usamos slide
+      setVariants(slideVariants);
+    }
+  }, []);
+  
   return (
-    <section className="home-container">
+    <motion.div
+      className="home-container"
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={variants}
+      transition={transition}
+    >
       <div className="home-name">
         <h1>UCIEL DARÓ</h1>
         <h4>FULLSTACK DEVELOR</h4>
       </div>
-      <NavigateForView to="/select-page" select_text={1} orientation={1} />
-    </section>
+    </motion.div>
   );
 }
 

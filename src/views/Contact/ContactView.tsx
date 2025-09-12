@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { IoIosSend } from "react-icons/io";
+import { FaBehance, FaGithub, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -25,22 +26,6 @@ function ContactView() {
   const formRef = useRef<HTMLFormElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const formSectionRef = useRef<HTMLFormElement>(null);
-
-  // GSAP animations can be added here if needed
-  useGSAP(
-    () => {
-      gsap.from(".faq-item", {
-        opacity: 0,
-        x: -50,
-        duration: 0.8,
-        stagger: 0.2,
-        delay: 1,
-      });
-    },
-    {
-      scope: containerRef,
-    }
-  );
 
   // EmailJS submission handler
   const onSubmit = () => {
@@ -72,25 +57,8 @@ function ContactView() {
       });
   };
 
-  // Reset handler for the success message
-  const handleReset = () => {
-    gsap.to(".success-message", {
-      opacity: 0,
-      y: 20,
-      duration: 0.4,
-      onComplete: () => {
-        setSent(false);
-        gsap.fromTo(
-          formSectionRef.current,
-          { opacity: 0, y: -20 },
-          { opacity: 1, y: 0, duration: 0.6 }
-        );
-      },
-    });
-  };
-
   return (
-    <div className="contact-container" ref={containerRef}>
+    <div className="contact-container">
       <h1 className="contact-heading">Contacto</h1>
       <p className="contact-heading-intro">
         <strong>Tenés una idea en mente? ¡Hablemos!</strong> Completá el
@@ -160,7 +128,7 @@ function ContactView() {
               <span className="loader"></span>
             ) : (
               <>
-                <IoIosSend color="#f2f2f2"/>
+                <IoIosSend color="#f2f2f2" />
                 Enviar
                 <span></span>
               </>
@@ -171,7 +139,7 @@ function ContactView() {
         <div className="success-message">
           <h2>✅ ¡Mensaje enviado con éxito!</h2>
           <p>Gracias por contactarte. Te responderé lo antes posible.</p>
-          <button className="send-button" onClick={handleReset}>
+          <button className="send-button">
             Enviar otro mensaje
           </button>
         </div>
@@ -181,23 +149,17 @@ function ContactView() {
         <h2>Redes Sociales</h2>
         <div className="socials">
           <a href="https://github.com" target="_blank" rel="noreferrer">
+            <FaGithub size={24} color="#fefefe" />
             GitHub
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+            <FaLinkedinIn size={24}  color="#fefefe" />
             LinkedIn
           </a>
           <a href="https://behance.net" target="_blank" rel="noreferrer">
+            <FaBehance size={24}  color="#fefefe" />
             Behance
           </a>
-        </div>
-
-        <div className="details">
-          <p>
-            <strong>📞 Teléfono:</strong> +54 9 341 123-4567
-          </p>
-          <p>
-            <strong>📍 Ubicación:</strong> Rosario, Santa Fe, Argentina
-          </p>
         </div>
       </div>
 
